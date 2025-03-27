@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;700&display=swap');
+
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #fbf1c6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.window{
+  z-index:10;
+}
+.background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.cloud-background {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 90%;
+  object-fit: cover;
+  z-index: 1;
+}
+
+
+
+.chick-small {
+  position: absolute;
+  top: 120px;
+  left:0px;
+  width: 20%;
+  height: 20%;
+  z-index: 2;
+}
+
+.chick-large {
+  position: absolute;
+  top: 220px;
+  right: 10px;
+  width: 45%;
+  height: 40%;
+  z-index: 2;
+}
+
+
+
+.window-controls {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 10px;
+}
+
+#minimize-btn {
+  width: 44px;
+  height: 40px; 
+  position: absolute;
+  right:54px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+#minimize-btn:hover {
+  transform: scale(1.05); 
+}
+
+#close-btn {
+  width: 44px; 
+  height: 40px;
+  position: absolute;
+  right:0px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+}
+
+#close-btn:hover {
+  transform: scale(1.05); 
+}
+
+#start-label {
+  position: absolute;
+  display: block;
+  bottom:210px;
+  left:30px;
+  font-family: 'Pixelify Sans', sans-serif;
+  font-size: 25px;
+  width: 250px;
+  word-wrap: break-word; 
+  white-space: normal; 
+
+}
+
+#next2 {
+  position: absolute;
+  top:308px;
+  left: 60px;
+  background-color: #f1d3af;
+  border: 2px solid #000000;
+  border-radius:1ch;
+  border-width:1mm;
+  color: black;
+  padding: 5px 25px;
+  cursor: pointer;
+  font-family: 'Pixelify Sans', sans-serif;
+  font-size: 25px;
+  transition: transform 0.2s ease-in-out;
+}
+
+#next2:hover {
+  transform: scale(1.1); /* Increases size by 10% */
+}
