@@ -1,18 +1,20 @@
 
 document.addEventListener('DOMContentLoaded', async () => {
+    console.log("Script loaded!");
     const minimizeBtn = document.getElementById('minimize-btn');
     const closeBtn = document.getElementById('close-btn');
     const next2 = document.getElementById("next2");
     const checkItOut = document.getElementById("next-btn");
 
     const next3 = document.getElementById("next3");
-    const next4 = document.getElementById("next4");
+    const next4 = document.getElementById("next4-btn");
     const goBack1 = document.getElementById("go-back1");
     const goBack2 = document.getElementById("go-back2");
     const goBack3 = document.getElementById("go-back3");
     const giftButton = document.getElementById("pg2-gift");
     const giftLabel = document.getElementById("opening-gift-label");
 
+    
 
     const imagePaths = [
         "./assets/pg2/opengift/cutie1.png",
@@ -27,9 +29,49 @@ document.addEventListener('DOMContentLoaded', async () => {
         "./assets/pg2/giftbox/gift3.png",
         "./assets/pg2/giftbox/gift4.png",
     ];
+
+    const imagePaths3 = [
+        "./assets/pg3/pookie/pookie1.png",
+        "./assets/pg3/pookie/pookie2.png",
+        "./assets/pg3/pookie/pookie3.png",
+    ];
+    const imagePaths4 = [
+        "./assets/pg3/cake/cake1.png",
+        "./assets/pg3/cake/cake2.png",
+        "./assets/pg3/cake/cake3.png",
+    ];
+    const imagePaths5 = [
+        "./assets/start/bigchick/bigchick1.png",
+        "./assets/start/bigchick/bigchick2.png",
+        "./assets/start/bigchick/bigchick3.png",
+        "./assets/start/bigchick/bigchick5.png",
+
+    ];
     const preloadedImages = [];
     const preloadedImages2 = [];
+    const preloadedImages3 = [];
+    const preloadedImages4 = [];
+    const preloadedImages5 = [];
 
+
+
+
+    function typeEffect(text, element, speed = 100) {
+        element.style.visibility = "visible";
+        element.style.display = "block"; 
+        element.textContent = ""; 
+        let index = 0;
+        function type() {
+            if (index < text.length) {
+                element.textContent += text[index];
+                index++;
+                setTimeout(type, speed); 
+            }
+        }
+    
+        type();
+    }
+    
 
     if (checkItOut) {
         checkItOut.addEventListener("click", () => {
@@ -98,45 +140,74 @@ document.addEventListener('DOMContentLoaded', async () => {
         img.src = src;
         preloadedImages2.push(img);
     });
+    imagePaths3.forEach((src) => {
+        const img = new Image();
+        img.src = src;
+        preloadedImages3.push(img);
+    });
+    imagePaths4.forEach((src) => {
+        const img = new Image();
+        img.src = src;
+        preloadedImages4.push(img);
+    });
+    imagePaths5.forEach((src) => {
+        const img = new Image();
+        img.src = src;
+        preloadedImages5.push(img);
+    });
     
+
+
+
+    if (window.location.pathname.includes("pg3.html")) {
+        console.log("On pg3.html, running typeEffect...");
+
+        const bdaymaLabel = document.getElementById("bday-ma-label");
+
+        if (bdaymaLabel) {
+            const text = "happy birthday मम्मी !!!";
+            bdaymaLabel.textContent = "";
+            setTimeout(() => typeEffect(text, bdaymaLabel, 150), 500);
+        } else {
+            console.error("Error: bday-ma-label not found on pg3.html!");
+        }
+
+        const nextButton = document.getElementById("next4-btn");
+        setTimeout( ()=>{
+            nextButton.classList.add("show");
+        },3000)
+    } else {
+        console.log("Not on pg3.html, skipping typeEffect.");
+    }
+
+
+    if (window.location.pathname.includes("pg2.html")) {
     giftButton.addEventListener("click", () => {
         document.getElementById("gift-animation").style.display = "none"; // Hide animation on click
         document.getElementById("gift-opening-animation").style.display = "block"; 
         document.getElementById("pg2-gift").style.display="none";
-    });
-    giftButton.classList.add("pulsing");
-    giftButton.addEventListener("click", () => {
-        giftButton.classList.remove("pulsing");
-    });
-    
-    
-    
-    
-    function typeEffect(text, element, speed = 100) {
-        element.style.display = "block"; 
-        element.textContent = ""; 
-        let index = 0;
-        function type() {
-            if (index < text.length) {
-                element.textContent += text[index];
-                index++;
-                setTimeout(type, speed); 
-            }
-        }
-    
-        type();
-    }
-    
-    giftButton.addEventListener("click", () => {
         typeEffect("opening gift...", giftLabel, 150);
         setTimeout( ()=>{
             document.getElementById('next-btn').classList.add("show");
         },2300);
-        
     });
 
     
-      
+    
+    giftButton.classList.add("pulsing");
+}
+    // giftButton.addEventListener("click", () => {
+    //     giftButton.classList.remove("pulsing");
+    // });
+    
+    
+    
+    
+    
+    
+
+    
+    
     
 
 });
