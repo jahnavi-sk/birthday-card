@@ -12,6 +12,10 @@ body {
   overflow: hidden;
 }
 
+body.pg2{
+  background-color: #fdabab;
+}
+
 .window{
   z-index:10;
 }
@@ -103,6 +107,22 @@ body {
 
 }
 
+#pg2-label {
+  position: absolute;
+  display: block;
+  top: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Pixelify Sans', sans-serif;
+  font-size: 30px;
+  width: 250px;
+  word-wrap: break-word; 
+  white-space: normal;
+  text-align: center; /* Ensures text inside is also centered */
+}
+
+
+
 #next2 {
   position: absolute;
   top:308px;
@@ -119,6 +139,85 @@ body {
   transition: transform 0.2s ease-in-out;
 }
 
-#next2:hover {
-  transform: scale(1.1); /* Increases size by 10% */
+@keyframes pulse {
+  0% {
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    transform: translateX(-50%) scale(1.1); /* Slightly bigger */
+  }
+  100% {
+    transform: translateX(-50%) scale(1);
+  }
 }
+
+
+#pg2-gift {
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #FA8C8C;
+  border: 1px solid #000000;
+  border-width: 1mm;
+  color: black;
+  padding: 5px 25px;
+  cursor: pointer;
+  font-family: 'Pixelify Sans', sans-serif;
+  font-size: 25px;
+  transition: transform 0.2s ease-in-out;
+  animation: pulse 1.5s infinite ease-in-out;
+}
+
+
+#next2:hover {
+  transform: scale(1.1); 
+}
+
+#gift-animation {
+  width: 150px;  
+  height: 150px;
+  position: absolute;
+  top: 250px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: giftAnimation 5s steps(5) infinite;
+  opacity: 1;
+}
+
+@keyframes giftAnimation {
+  0%   { content: url("./assets/pg2/opengift/cutie1.png"); opacity: 1;}
+  20%  { content: url("./assets/pg2/opengift/cutie2.png"); opacity: 1;}
+  40%  { content: url("./assets/pg2/opengift/cutie3.png"); opacity: 1;}
+  60%  { content: url("./assets/pg2/opengift/cutie4.png"); opacity: 1;}
+  80%  { content: url("./assets/pg2/opengift/cutie5.png"); opacity: 1;}
+  100% { content: url("./assets/pg2/opengift/cutie1.png"); opacity: 1;} 
+}
+
+/* #gift-container {
+  position: absolute;
+  top: 250px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 150px;
+}
+
+.gift-frame {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.8s linear;
+}
+
+.gift-frame:first-child {
+  opacity: 1;
+  z-index: 1;
+}
+
+.gift-frame.active {
+  opacity: 1;
+  z-index: 2;
+} */
+

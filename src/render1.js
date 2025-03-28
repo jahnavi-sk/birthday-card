@@ -1,58 +1,60 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const minimizeBtn = document.getElementById('minimize-btn');
-    const closeBtn = document.getElementById('close-btn');
-    const next2 = document.getElementById("next2");
-    const next3 = document.getElementById("next3");
-    const next4 = document.getElementById("next4");
-    const goBack1 = document.getElementById("go-back1");
-    const goBack2 = document.getElementById("go-back2");
-    const goBack3 = document.getElementById("go-back3");
+const { app, BrowserWindow, ipcMain } = require('electron');
+const path = require('path');
 
-    if (next2) {
-        next2.addEventListener("click", () => {
-            window.electron.send("load-pg2");
-        });
-    }
+let mainWindow;
 
-    if (next3) {
-        next3.addEventListener("click", () => {
-            window.electron.send("load-pg3");
-        });
-    }
+const createWindow = () => {
+    mainWindow = new BrowserWindow({
+        width: 800,
+        height: 600,
+        webPreferences: {
+            preload: path.join(__dirname, 'preload.js'),
+            contextIsolation: true,
+            enableRemoteModule: false,
+            nodeIntegration: false
+        },
+    });
 
-    if (next4) {
-        next4.addEventListener("click", () => {
-            window.electron.send("load-final");
-        });
-    }
+    mainWindow.loadFile(path.join(__dirname, 'index.html'));
+    mainWindow.webContents.openDevTools();
+};
 
-    if (goBack1) {
-        goBack1.addEventListener("click", () => {
-            window.electron.send("load-index");
-        });
-    }
+app.whenReady().then(() => {
+    createWindow();
 
-    if (goBack2) {
-        goBack2.addEventListener("click", () => {
-            window.electron.send("load-pg2");
-        });
-    }
+    app.on('activate', () => {
+        if (BrowserWindow.getAllWindows().length === 0) {
+            createWindow();
+        }
+    });
+});
 
-    if (goBack3) {
-        goBack3.addEventListener("click", () => {
-            window.electron.send("load-pg3");
-        });
-    }
+ipcMain.on("load-index", () => {
+    mainWindow.loadFile(path.join(__dirname, "index.html"));
+});
 
-    if (minimizeBtn) {
-        minimizeBtn.addEventListener('click', () => {
-            window.electron.send('minimize-app');
-        });
-    }
+ipcMain.on("load-pg2", () => {
+    mainWindow.loadFile(path.join(__dirname, "pg2.html"));
+});
 
-    if (closeBtn) {
-        closeBtn.addEventListener('click', () => {
-            window.electron.send('close-app');
-        });
+ipcMain.on("load-pg3", () => {
+    mainWindow.loadFile(path.join(__dirname, "pg3.html"));
+});
+
+ipcMain.on("load-final", () => {
+    mainWindow.loadFile(path.join(__dirname, "final.html"));
+});
+
+ipcMain.on('minimize-app', () => {
+    mainWindow.minimize();
+});
+
+ipcMain.on('close-app', () => {
+    mainWindow.close();
+});
+
+app.on("window-all-closed", () => {
+    if (process.platform !== "darwin") {
+        app.quit();
     }
 });

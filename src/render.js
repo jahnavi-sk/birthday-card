@@ -1,62 +1,5 @@
 
-// document.addEventListener('DOMContentLoaded', () => {
-//     const minimizeBtn = document.getElementById('minimize-btn');
-//     const closeBtn = document.getElementById('close-btn');
-//     const next2 = document.querySelector("next2");
-//     const next3 = document.querySelector("next3");
-//     const next4 = document.querySelector("next4");
-//     const goBackBtn = document.getElementById("go-back");
-//     const goBackBtn3 = document.getElementById("go-back3");
-//     const goBackBtn2 = document.getElementById("go-back2");
-    
-//     if (next2) {
-//         next2.addEventListener("click", () => {
-//             window.electron.send("load-page-2");
-//         });
-//     }
-
-//     if (next3) {
-//         next3.addEventListener("click", () => {
-//             window.electron.send("load-page-3");
-//         });
-//     }
-
-//     if (next4) {
-//         next4.addEventListener("click", () => {
-//             window.electron.send("load-page-2");
-//         });
-//     }
-
-//     if (goBackBtn) {
-//         goBackBtn.addEventListener("click", () => {
-//             window.electron.send("load-main-page");
-//         });
-//     }
-
-//     if (goBackBtn2) {
-//         goBackBtn2.addEventListener("click", () => {
-//             window.electron.send("load-new-page");
-//         });
-//     }
-
-//     if (goBackBtn3) {
-//         goBackBtn3.addEventListener("click", () => {
-//             window.electron.send("load-page-2");
-//         });
-//     }
-
-
-//     minimizeBtn.addEventListener('click', () => {
-//       window.electron.send('minimize-app');
-//     });
-  
-//     closeBtn.addEventListener('click', () => {
-//       window.electron.send('close-app');
-//     });
-//   });
-  
-
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
     const minimizeBtn = document.getElementById('minimize-btn');
     const closeBtn = document.getElementById('close-btn');
     const next2 = document.getElementById("next2");
@@ -114,3 +57,48 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 });
+
+
+
+
+const imagePaths = [
+    "./assets/pg2/opengift/cutie1.png",
+    "./assets/pg2/opengift/cutie2.png",
+    "./assets/pg2/opengift/cutie3.png",
+    "./assets/pg2/opengift/cutie4.png",
+    "./assets/pg2/opengift/cutie5.png"
+];
+
+// Preload images to prevent flickering
+const preloadedImages = [];
+imagePaths.forEach((src) => {
+    const img = new Image();
+    img.src = src;
+    preloadedImages.push(img);
+});
+
+document.getElementById("pg2-gift").addEventListener("click", () => {
+    document.getElementById("gift-animation").style.display = "none"; // Hide animation on click
+});
+
+// const frames = document.querySelectorAll(".gift-frame");
+// let index = 0;
+
+// function changeFrame() {
+//     let currentFrame = frames[index];
+//     let nextIndex = (index + 1) % frames.length;
+//     let nextFrame = frames[nextIndex];
+
+//     // Ensure smooth crossfade: current fades out, next fades in
+//     currentFrame.style.opacity = "0";
+//     nextFrame.style.opacity = "1";
+
+//     index = nextIndex;
+// }
+
+// // Change frame every 1.4 seconds (7s total cycle)
+// setInterval(changeFrame, 1000);
+
+// document.getElementById("pg2-gift").addEventListener("click", () => {
+//     document.getElementById("gift-container").style.display = "none"; // Hide animation on click
+// });
