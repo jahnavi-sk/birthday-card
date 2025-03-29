@@ -8,9 +8,13 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const next3 = document.getElementById("next3");
     const next4 = document.getElementById("next4-btn");
+    const next5 = document.getElementById("next5")
+    const next6 = document.getElementById("next6")
     const goBack1 = document.getElementById("go-back1");
     const goBack2 = document.getElementById("go-back2");
     const goBack3 = document.getElementById("go-back3");
+    const goBack4 = document.getElementById("go-back4");
+
     const giftButton = document.getElementById("pg2-gift");
     const giftLabel = document.getElementById("opening-gift-label");
 
@@ -44,14 +48,23 @@ document.addEventListener('DOMContentLoaded', async () => {
         "./assets/start/bigchick/bigchick1.png",
         "./assets/start/bigchick/bigchick2.png",
         "./assets/start/bigchick/bigchick3.png",
+        "./assets/start/bigchick/bigchick4.png",
         "./assets/start/bigchick/bigchick5.png",
 
+    ];
+    const imagePaths6 = [
+        "./assets/pg4/snoopy/snoopy1.png",
+        "./assets/pg4/snoopy/snoopy2.png",
+        "./assets/pg4/snoopy/snoopy3.png",
+       "./assets/pg4/snoopy/snoopy3.png",
     ];
     const preloadedImages = [];
     const preloadedImages2 = [];
     const preloadedImages3 = [];
     const preloadedImages4 = [];
     const preloadedImages5 = [];
+    const preloadedImages6 = [];
+
 
 
 
@@ -93,10 +106,15 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     if (next4) {
         next4.addEventListener("click", () => {
-            window.electron.send("load-final");
+            window.electron.send("load-pg4");
         });
     }
 
+    if(next5){
+        next5.addEventListener("click",()=>{
+            window.electron.send("load-pg5")
+        })
+    }
     if (goBack1) {
         goBack1.addEventListener("click", () => {
             window.electron.send("load-index");
@@ -112,6 +130,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (goBack3) {
         goBack3.addEventListener("click", () => {
             window.electron.send("load-pg3");
+        });
+    }
+
+    if (goBack4) {
+        goBack4.addEventListener("click", () => {
+            window.electron.send("load-pg4");
         });
     }
 
@@ -155,6 +179,11 @@ document.addEventListener('DOMContentLoaded', async () => {
         img.src = src;
         preloadedImages5.push(img);
     });
+    imagePaths6.forEach((src) => {
+        const img = new Image();
+        img.src = src;
+        preloadedImages6.push(img);
+    });
     
 
 
@@ -180,6 +209,51 @@ document.addEventListener('DOMContentLoaded', async () => {
         console.log("Not on pg3.html, skipping typeEffect.");
     }
 
+    if (window.location.pathname.includes("pg4.html")) {
+        console.log("On pg4.html, running typeEffect...");
+
+        const label1 = document.getElementById("pg4-label1");
+
+        if (label1) {
+            const text = "huh? what's this ? looks like snoopy has a message !";
+            label1.textContent = "";
+            setTimeout(() => typeEffect(text, label1, 150), 500);
+        } else {
+            console.error("Error: pg4-label1 not found on pg4.html!");
+        }
+        
+        const label2 = document.getElementById("pg4-label2");
+        setTimeout( ()=>{
+            label1.style.display= "none"
+            if (label2) {
+                const text = "hmm... it seems like we have a gift for someone else too !";
+                label2.textContent = "";
+                setTimeout(() => typeEffect(text, label2, 150), 500);
+            }
+            
+        },10000)
+
+        const pg4Gift = document.getElementById("pg4-gift");
+        setTimeout(()=>{
+            pg4Gift.classList.add("show");
+            pg4Gift.classList.add("pulsing");
+        },20000);
+        
+        const giftLabel4 = document.getElementById("opening-gift-label4");
+        pg4Gift.addEventListener("click",()=>{
+            // pg4Gift.style.display="none";
+            pg4Gift.classList.remove("show");
+
+            document.getElementById("gift-opening-animation").style.display = "block"; 
+            
+            typeEffect("opening gift...", giftLabel4, 150);
+            setTimeout( ()=>{
+                document.getElementById('next5').classList.add("show");
+            },2300);
+        })
+    } else {
+        console.log("Not on pg4.html, skipping typeEffect.");
+    }
 
     if (window.location.pathname.includes("pg2.html")) {
     giftButton.addEventListener("click", () => {
@@ -192,6 +266,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         },2300);
     });
 
+    
     
     
     giftButton.classList.add("pulsing");

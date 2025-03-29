@@ -19,6 +19,10 @@ body.pg2{
 body.pg3{
   background-color: #99d9ea;
 }
+
+body.pg4{
+  background-color: #F6AD78;
+}
 .window{
   z-index:10;
 }
@@ -149,6 +153,22 @@ body.pg3{
   text-align: center; /* Ensures text inside is also centered */
 }
 
+#opening-gift-label4 {
+  position: absolute;
+  display: none;
+  top: 190px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: 'Pixelify Sans', sans-serif;
+  font-size: 25px;
+  width: 250px;
+  word-wrap: break-word; 
+  white-space: normal;
+  text-align: center; /* Ensures text inside is also centered */
+}
+
+
+
 #bday-ma-label {
   position: absolute;
   display: block;
@@ -161,6 +181,33 @@ body.pg3{
   width: 300px;
   text-align: center; /* Ensures text inside is also centered */
 }
+
+#pg4-label1 {
+  position: absolute;
+  display: block;
+  top: 55px;
+  left: 51%;
+  transform: translateX(-50%);
+  font-family: 'Pixelify Sans', sans-serif;
+  font-size: 35px;
+  font-weight: bold;
+  width: 350px;
+  text-align: center; /* Ensures text inside is also centered */
+}
+
+#pg4-label2 {
+  position: absolute;
+  display: none;
+  top: 55px;
+  left: 51%;
+  transform: translateX(-50%);
+  font-family: 'Pixelify Sans', sans-serif;
+  font-size: 35px;
+  font-weight: bold;
+  width: 350px;
+  text-align: center; /* Ensures text inside is also centered */
+}
+
 
 #next2 {
   position: absolute;
@@ -207,6 +254,30 @@ body.pg3{
   font-size: 25px;
   transition: transform 0.2s ease-in-out;
  
+}
+
+#pg4-gift {
+  position: absolute;
+  top: 190px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #B0305CFF;
+  border: 1px solid #000000;
+  border-radius:1ch;
+  border-width: 1mm;
+  color: black;
+  padding: 5px 25px;
+  cursor: pointer;
+  font-family: 'Pixelify Sans', sans-serif;
+  font-size: 25px;
+  transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
+  opacity: 0;  /* Initially hidden */
+}
+
+#pg4-gift.show {
+  opacity: 1;
+  transform: translateX(-50%) scale(1.1); /* Slight zoom effect */
+  pointer-events: auto; /* Enable clicks when visible */
 }
 
 .pulsing {
@@ -270,9 +341,10 @@ body.pg3{
 
 @keyframes bigChickAnimation {
   0%   { content: url("./assets/start/bigchick/bigchick1.png"); opacity: 1;}
-  25%  { content: url("./assets/start/bigchick/bigchick2.png"); opacity: 1;}
-  50%   { content: url("./assets/start/bigchick/bigchick3.png"); opacity: 1;}
-  75%  { content: url("./assets/start/bigchick/bigchick5.png"); opacity: 1;}
+  20%  { content: url("./assets/start/bigchick/bigchick2.png"); opacity: 1;}
+  40%   { content: url("./assets/start/bigchick/bigchick3.png"); opacity: 1;}
+  60%  { content: url("./assets/start/bigchick/bigchick4.png"); opacity: 1;}
+  80%  { content: url("./assets/start/bigchick/bigchick5.png"); opacity: 1;}
   100%  { content: url("./assets/start/bigchick/bigchick1.png"); opacity: 1;}
 
 }
@@ -353,6 +425,8 @@ body.pg3{
 
 }
 
+
+
 @keyframes giftOpeningAnimation {
   0%   { content: url("./assets/pg2/giftbox/gift1.png"); opacity: 1;}
   25%  { content: url("./assets/pg2/giftbox/gift2.png"); opacity: 1;}
@@ -363,7 +437,29 @@ body.pg3{
 
 
 
+#snoopy-animation {
+  width: 250px;  
+  height: 200px;
+  position: absolute;
+  bottom: 50px;
+  left: 2px;
+  animation: snoopyWalk 3s steps(5) infinite, moveForward 10s linear forwards;
+  opacity: 1;
+}
 
+@keyframes snoopyWalk {
+  0%   { content: url("./assets/pg4/snoopy/snoopy1.png"); }
+  25%  { content: url("./assets/pg4/snoopy/snoopy2.png"); }
+  50%  { content: url("./assets/pg4/snoopy/snoopy3.png"); }
+  75%  { content: url("./assets/pg4/snoopy/snoopy4.png"); }
+  100% { content: url("./assets/pg4/snoopy/snoopy1.png"); }
+}
+
+@keyframes moveForward {
+  0% { left: 1%; opacity: 1; }
+  90% { opacity: 1; } /* Keeps Snoopy visible until near the end */
+  100% { left: 80%; opacity: 0; } /* Fades out at the end */
+}
 
 #next-btn {
   position: absolute;
@@ -417,13 +513,38 @@ body.pg3{
   pointer-events: auto; /* Enable clicks when visible */
 }
 
-#next4{
+/* #next5{
   position: absolute;
   top:30px;
   left:10px;
+} */
+
+#next5 {
+  position: absolute;
+  top: 250px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #B0305CFF;
+  border: 1px solid #000000;
+  border-width: 1mm;
+  border-radius:1ch;
+  color: black;
+  padding: 5px 25px;
+  cursor: pointer;
+  font-family: 'Pixelify Sans', sans-serif;
+  font-size: 25px;
+  transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
+  opacity: 0;  /* Initially hidden */
+  pointer-events: none; /* Prevent clicks when hidden */
 }
 
-#go-back2{
+#next5.show {
+  opacity: 1;
+  transform: translateX(-50%) scale(1.1); /* Slight zoom effect */
+  pointer-events: auto; /* Enable clicks when visible */
+}
+
+#go-back3{
   position: absolute;
   top:10px;
   left:10px;

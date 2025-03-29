@@ -56,6 +56,14 @@ ipcMain.on("load-pg3", () => {
     mainWindow.loadFile(path.join(__dirname, "pg3.html"));
 });
 
+ipcMain.on("load-pg4", () => {
+  mainWindow.loadFile(path.join(__dirname, "pg4.html"));
+});
+
+ipcMain.on("load-pg5", () => {
+  mainWindow.loadFile(path.join(__dirname, "pg5.html"));
+});
+
 ipcMain.on("load-final", () => {
     mainWindow.loadFile(path.join(__dirname, "final.html"));
 });
