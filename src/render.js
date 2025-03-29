@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     const goBack2 = document.getElementById("go-back2");
     const goBack3 = document.getElementById("go-back3");
     const goBack4 = document.getElementById("go-back4");
+    const goBack5 = document.getElementById("go-back5");
+
 
     const giftButton = document.getElementById("pg2-gift");
     const giftLabel = document.getElementById("opening-gift-label");
@@ -58,12 +60,40 @@ document.addEventListener('DOMContentLoaded', async () => {
         "./assets/pg4/snoopy/snoopy3.png",
        "./assets/pg4/snoopy/snoopy3.png",
     ];
+    const imagePaths7 = [
+        "./assets/pg5/kuromi/kuromi1.png",
+        "./assets/pg5/kuromi/kuromi2.png",
+        "./assets/pg5/kuromi/kuromi3.png",
+        "./assets/pg5/kuromi/kuromi4.png",
+        "./assets/pg5/kuromi/kuromi5.png",
+        "./assets/pg5/kuromi/kuromi6.png",
+    ];
+    const imagePaths8 = [
+        "./assets/final/froggie/froggie1.png",
+        "./assets/final/froggie/froggie2.png",
+        "./assets/final/froggie/froggie3.png",
+        "./assets/final/froggie/froggie4.png",
+        "./assets/final/froggie/froggie5.png",
+    ];
+    const imagePaths9 = [
+        "./assets/final/pinkie/pinkie1.png",
+        "./assets/final/pinkie/pinkie2.png",
+        "./assets/final/pinkie/pinkie3.png",
+        "./assets/final/pinkie/pinkie4.png",
+        "./assets/final/pinkie/pinkie5.png",
+    ];
     const preloadedImages = [];
     const preloadedImages2 = [];
     const preloadedImages3 = [];
     const preloadedImages4 = [];
     const preloadedImages5 = [];
     const preloadedImages6 = [];
+    const preloadedImages7 = [];
+    const preloadedImages8 = [];
+    const preloadedImages9 = [];
+
+
+
 
 
 
@@ -110,6 +140,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
+
+    if(next6){
+        next6.addEventListener("click", () => {
+            window.electron.send("load-final");
+        });
+    }
     if(next5){
         next5.addEventListener("click",()=>{
             window.electron.send("load-pg5")
@@ -136,6 +172,12 @@ document.addEventListener('DOMContentLoaded', async () => {
     if (goBack4) {
         goBack4.addEventListener("click", () => {
             window.electron.send("load-pg4");
+        });
+    }
+
+    if (goBack5) {
+        goBack5.addEventListener("click", () => {
+            window.electron.send("load-pg5");
         });
     }
 
@@ -184,7 +226,21 @@ document.addEventListener('DOMContentLoaded', async () => {
         img.src = src;
         preloadedImages6.push(img);
     });
-    
+    imagePaths7.forEach((src) => {
+        const img = new Image();
+        img.src = src;
+        preloadedImages7.push(img);
+    });
+    imagePaths8.forEach((src) => {
+        const img = new Image();
+        img.src = src;
+        preloadedImages8.push(img);
+    });
+    imagePaths9.forEach((src) => {
+        const img = new Image();
+        img.src = src;
+        preloadedImages9.push(img);
+    });
 
 
 
@@ -207,6 +263,68 @@ document.addEventListener('DOMContentLoaded', async () => {
         },3000)
     } else {
         console.log("Not on pg3.html, skipping typeEffect.");
+    }
+
+    if (window.location.pathname.includes("pg5.html")) {
+        console.log("On pg3.html, running typeEffect...");
+
+        const bdaypaLabel = document.getElementById("bday-pa-label");
+
+        if (bdaypaLabel) {
+            const text = "happy birthday पापा !!!";
+            bdaypaLabel.textContent = "";
+            setTimeout(() => typeEffect(text, bdaypaLabel, 150), 500);
+        } else {
+            console.error("Error: bday-pa-label not found on pg5.html!");
+        }
+
+        const nextButton = document.getElementById("next6");
+        setTimeout( ()=>{
+            nextButton.classList.add("show");
+        },3000)
+    } else {
+        console.log("Not on pg5.html, skipping typeEffect.");
+    }
+
+
+    if (window.location.pathname.includes("final.html")) {
+        console.log("On pg3.html, running typeEffect...");
+
+        const fromLabel1 = document.getElementById("from-label1");
+
+        if (fromLabel1) {
+            const text = "from yatharth...";
+            fromLabel1.textContent = "";
+            setTimeout(() => typeEffect(text, fromLabel1, 150), 500);
+        } else {
+            console.error("Error: fromLabel1 not found on pg5.html!");
+        }
+
+        const fromLabel2 = document.getElementById("from-label2");
+        
+        
+        setTimeout( ()=>{
+            const pinkieA = document.getElementById("pinkie-animation");
+            // pinkieA.style.display= "block";
+            pinkieA.classList.add("show");
+            if (fromLabel2) {
+                const text = "...and jahnavi";
+                fromLabel2.textContent = "";
+                setTimeout(() => typeEffect(text, fromLabel2, 150), 500);
+            }
+        
+        },4000)
+
+        setTimeout( ()=>{
+            const lastMsg = document.getElementById("last-msg");
+            if (lastMsg) {
+                const text = "We love you both very much. Thank you for being the best parents ever!";
+                lastMsg.textContent = "";
+                setTimeout(() => typeEffect(text, lastMsg, 150), 500);
+            }
+        },6000)
+    } else {
+        console.log("Not on pg5.html, skipping typeEffect.");
     }
 
     if (window.location.pathname.includes("pg4.html")) {
@@ -271,6 +389,9 @@ document.addEventListener('DOMContentLoaded', async () => {
     
     giftButton.classList.add("pulsing");
 }
+
+
+    
     // giftButton.addEventListener("click", () => {
     //     giftButton.classList.remove("pulsing");
     // });
