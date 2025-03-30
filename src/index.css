@@ -17,7 +17,9 @@ body.pg2{
 }
 
 body.pg3{
-  background-color: #99d9ea;
+  background-color: #83d5ec;
+  /* background-color: #99d9ea; */
+
 }
 
 body.pg4{
@@ -121,7 +123,7 @@ body.finalpg{
 
 #start-label {
   position: absolute;
-  display: block;
+  display: none;
   bottom:210px;
   left:30px;
   font-family: 'Pixelify Sans', sans-serif;
@@ -214,7 +216,7 @@ body.finalpg{
 #bday-ma-label {
   position: absolute;
   display: block;
-  top: 55px;
+  top: 48px;
   left: 51%;
   transform: translateX(-50%);
   font-family: 'Pixelify Sans', sans-serif;
@@ -264,7 +266,7 @@ body.finalpg{
 }
 
 
-#next2 {
+/* #next2 {
   position: absolute;
   top:308px;
   left: 60px;
@@ -278,7 +280,7 @@ body.finalpg{
   font-family: 'Pixelify Sans', sans-serif;
   font-size: 25px;
   transition: transform 0.2s ease-in-out;
-}
+} */
 
 @keyframes pulse {
   0% {
@@ -339,9 +341,7 @@ body.finalpg{
   animation: pulse 1.5s infinite ease-in-out;
 }
 
-#next2:hover {
-  transform: scale(1.1); 
-}
+
 
 #gift-animation {
   width: 150px;  
@@ -363,12 +363,37 @@ body.finalpg{
   100% { content: url("./assets/pg2/opengift/cutie1.png"); opacity: 1;} 
 }
 
-#pookie-animation {
-  width: 250px;  
-  height: 200px;
+
+#peng-animation {
   position: absolute;
-  top: 180px;
-  left: 47.5%;
+  top: 120px;
+  left:70px;
+  width: 20%;
+  height: 20%;
+
+  /* width: 150px;  
+  height: 150px; */
+  
+  /* top: 285px; */
+  /* left: 50%; */
+  transform: translateX(-50%);
+  animation: pengAnimation 2s steps(5) infinite;
+  opacity: 1;
+}
+
+@keyframes pengAnimation {
+  0%   { content: url("./assets/start/pengu/pengu1.png"); opacity: 1;}
+  33%  { content: url("./assets/start/pengu/pengu2.png"); opacity: 1;}
+  67%  { content: url("./assets/start/pengu/pengu3.png"); opacity: 1;}
+  100%  { content: url("./assets/start/pengu/pengu1.png"); opacity: 1;}
+}
+
+#pookie-animation {
+  width: 240px;  
+  height: 180px;
+  position: absolute;
+  top: 150px;
+  left: 47%;
   transform: translateX(-50%);
   animation: pookieAnimation 3s steps(5) infinite;
   opacity: 1;
@@ -416,7 +441,7 @@ body.finalpg{
   height: 200px;
   position: absolute;
   top: 180px;
-  left: 23%;
+  left: 25%;
   transform: translateX(-50%);
   animation: froggieAnimation 3s steps(5) infinite;
   opacity: 1;
@@ -531,11 +556,11 @@ body.finalpg{
 
 
 #cake-animation {
-  width: 120px;  
-  height: 120px;
+  width: 100px;  
+  height: 100px;
   position: absolute;
-  top: 20px;
-  left: 60px;
+  top: 340px;
+  left: 50%;
   transform: translateX(-50%);
   animation: cakeAnimation 3s steps(5) infinite;
   opacity: 1;
@@ -663,10 +688,36 @@ body.finalpg{
 
 #next4-btn {
   position: absolute;
-  top: 400px;
+  top: 440px;
   left: 50%;
   transform: translateX(-50%);
   background-color: #4DA6FFFF;
+  border: 1px solid #000000;
+  border-width: 1mm;
+  border-radius:1ch;
+
+  color: black;
+  padding: 5px 20px;
+  /* height:px; */
+  /* width:125px; */
+  cursor: pointer;
+  font-family: 'Pixelify Sans', sans-serif;
+  font-size: 25px;
+  transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
+  opacity: 0;  /* Initially hidden */
+  pointer-events: none; /* Prevent clicks when hidden */
+}
+
+
+#next2 {
+  position: absolute;
+  top:308px;
+  left: 130px;
+  background-color: #f1d3af;
+  /* top: 400px;
+  left: 50%; */
+  transform: translateX(-50%);
+  /* background-color: #4DA6FFFF; */
   border: 1px solid #000000;
   border-width: 1mm;
   border-radius:1ch;
@@ -680,6 +731,16 @@ body.finalpg{
   opacity: 0;  /* Initially hidden */
   pointer-events: none; /* Prevent clicks when hidden */
 }
+
+#next2.show {
+  opacity: 1;
+  transform: translateX(-50%) scale(1.1); /* Slight zoom effect */
+  pointer-events: auto; /* Enable clicks when visible */
+}
+
+/* #next2:hover {
+  transform: scale(1.1); 
+} */
 
 #next6 {
   position: absolute;
@@ -754,7 +815,90 @@ body.finalpg{
   position: absolute;
   top:10px;
   left:10px;
+  width: 44px;
+  height: 40px; 
+  position: absolute;
+  right:54px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  
 }
+
+#go-back5:hover {
+  transform: scale(1.05); 
+}
+
+#go-back2{
+  position: absolute;
+  top:10px;
+  left:10px;
+  width: 44px;
+  height: 40px; 
+  position: absolute;
+  right:54px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  
+}
+
+#go-back2:hover {
+  transform: scale(1.05); 
+}
+
+#go-back3{
+  position: absolute;
+  top:10px;
+  left:10px;
+  width: 44px;
+  height: 40px; 
+  position: absolute;
+  right:54px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  
+}
+
+#go-back3:hover {
+  transform: scale(1.05); 
+}
+
+
+
+#go-back4{
+  position: absolute;
+  top:10px;
+  left:10px;
+  width: 44px;
+  height: 40px; 
+  position: absolute;
+  right:54px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  
+}
+
+#go-back4:hover {
+  transform: scale(1.05); 
+}
+
+#go-back5{
+  position: absolute;
+  top:10px;
+  left:10px;
+  width: 44px;
+  height: 40px; 
+  position: absolute;
+  right:54px;
+  cursor: pointer;
+  transition: transform 0.2s ease-in-out;
+  
+}
+
+#go-back5:hover {
+  transform: scale(1.05); 
+}
+
+
 /* #next-btn {
   position: absolute;
   top: 550px;

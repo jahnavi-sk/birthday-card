@@ -82,6 +82,12 @@ document.addEventListener('DOMContentLoaded', async () => {
         "./assets/final/pinkie/pinkie4.png",
         "./assets/final/pinkie/pinkie5.png",
     ];
+    const imagePaths10 = [
+        "./assets/start/pengu/pengu1.png",
+        "./assets/start/pengu/pengu2.png",
+        "./assets/start/pengu/pengu3.png",
+       
+    ];
     const preloadedImages = [];
     const preloadedImages2 = [];
     const preloadedImages3 = [];
@@ -91,6 +97,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     const preloadedImages7 = [];
     const preloadedImages8 = [];
     const preloadedImages9 = [];
+    const preloadedImages10 = [];
+
 
 
 
@@ -159,25 +167,25 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     if (goBack2) {
         goBack2.addEventListener("click", () => {
-            window.electron.send("load-pg2");
+            window.electron.send("load-index");
         });
     }
 
     if (goBack3) {
         goBack3.addEventListener("click", () => {
-            window.electron.send("load-pg3");
+            window.electron.send("load-pg2");
         });
     }
 
     if (goBack4) {
         goBack4.addEventListener("click", () => {
-            window.electron.send("load-pg4");
+            window.electron.send("load-pg3");
         });
     }
 
     if (goBack5) {
         goBack5.addEventListener("click", () => {
-            window.electron.send("load-pg5");
+            window.electron.send("load-pg4");
         });
     }
 
@@ -241,8 +249,38 @@ document.addEventListener('DOMContentLoaded', async () => {
         img.src = src;
         preloadedImages9.push(img);
     });
+    imagePaths10.forEach((src) => {
+        const img = new Image();
+        img.src = src;
+        preloadedImages10.push(img);
+    });
 
 
+
+    if (window.location.pathname.includes("index.html")) {
+        console.log("On start.html, running typeEffect...");
+
+        const startLabel = document.getElementById("start-label");
+
+        if (startLabel) {
+            const text = "There is a secret message for you...";
+            startLabel.textContent = "";
+            setTimeout(() => typeEffect(text, startLabel, 150), 500);
+        } else {
+            console.error("Error: start-label not found on pg3.html!");
+        }
+
+
+        const next2Button = document.getElementById("next2");
+        setTimeout( ()=>{
+            next2Button.classList.add("show");
+            next2Button.classList.add("pulsing");
+        },3000)
+
+
+    } else {
+        console.log("Not on start.html, skipping typeEffect.");
+    }
 
     if (window.location.pathname.includes("pg3.html")) {
         console.log("On pg3.html, running typeEffect...");
