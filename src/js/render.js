@@ -23,81 +23,59 @@ document.addEventListener('DOMContentLoaded', async () => {
     
 
     const imagePaths = [
-        "./assets/pg2/opengift/cutie1.png",
-        "./assets/pg2/opengift/cutie2.png",
-        "./assets/pg2/opengift/cutie3.png",
-        "./assets/pg2/opengift/cutie4.png",
-        "./assets/pg2/opengift/cutie5.png"
+        ".././assets/pg2/opengift/cutie1.png",
+        ".././assets/pg2/opengift/cutie2.png",
+        ".././assets/pg2/opengift/cutie3.png",
+        ".././assets/pg2/opengift/cutie4.png",
+        ".././assets/pg2/opengift/cutie5.png",
+        ".././assets/pg2/giftbox/gift1.png",
+        ".././assets/pg2/giftbox/gift2.png",
+        ".././assets/pg2/giftbox/gift3.png",
+        ".././assets/pg2/giftbox/gift4.png",
+        ".././assets/pg3/pookie/pookie1.png",
+        ".././assets/pg3/pookie/pookie2.png",
+        ".././assets/pg3/pookie/pookie3.png",
+        ".././assets/pg3/cake/cake1.png",
+        ".././assets/pg3/cake/cake2.png",
+        ".././assets/pg3/cake/cake3.png",
+        ".././assets/start/bigchick/bigchick1.png",
+        ".././assets/start/bigchick/bigchick2.png",
+        ".././assets/start/bigchick/bigchick3.png",
+        ".././assets/start/bigchick/bigchick4.png",
+        ".././assets/start/bigchick/bigchick5.png",
+        ".././assets/pg4/snoopy/snoopy1.png",
+        ".././assets/pg4/snoopy/snoopy2.png",
+        ".././assets/pg4/snoopy/snoopy3.png",
+       ".././assets/pg4/snoopy/snoopy3.png",
+       ".././assets/pg5/kuromi/kuromi1.png",
+       ".././assets/pg5/kuromi/kuromi2.png",
+       ".././assets/pg5/kuromi/kuromi3.png",
+       ".././assets/pg5/kuromi/kuromi4.png",
+       ".././assets/pg5/kuromi/kuromi5.png",
+       ".././assets/pg5/kuromi/kuromi6.png",
+       ".././assets/pg5/kuromi/kuromi1.png",
+       ".././assets/pg5/kuromi/kuromi2.png",
+       ".././assets/pg5/kuromi/kuromi3.png",
+       ".././assets/pg5/kuromi/kuromi4.png",
+       ".././assets/pg5/kuromi/kuromi5.png",
+       ".././assets/pg5/kuromi/kuromi6.png",
+       ".././assets/final/froggie/froggie1.png",
+        ".././assets/final/froggie/froggie2.png",
+        ".././assets/final/froggie/froggie3.png",
+        ".././assets/final/froggie/froggie4.png",
+        ".././assets/final/froggie/froggie5.png",
+        ".././assets/final/pinkie/pinkie1.png",
+        ".././assets/final/pinkie/pinkie2.png",
+        ".././assets/final/pinkie/pinkie3.png",
+        ".././assets/final/pinkie/pinkie4.png",
+        ".././assets/final/pinkie/pinkie5.png",
+        ".././assets/start/pengu/pengu1.png",
+        ".././assets/start/pengu/pengu2.png",
+        ".././assets/start/pengu/pengu3.png",
     ];
-    const imagePaths2 = [
-        "./assets/pg2/giftbox/gift1.png",
-        "./assets/pg2/giftbox/gift2.png",
-        "./assets/pg2/giftbox/gift3.png",
-        "./assets/pg2/giftbox/gift4.png",
-    ];
-
-    const imagePaths3 = [
-        "./assets/pg3/pookie/pookie1.png",
-        "./assets/pg3/pookie/pookie2.png",
-        "./assets/pg3/pookie/pookie3.png",
-    ];
-    const imagePaths4 = [
-        "./assets/pg3/cake/cake1.png",
-        "./assets/pg3/cake/cake2.png",
-        "./assets/pg3/cake/cake3.png",
-    ];
-    const imagePaths5 = [
-        "./assets/start/bigchick/bigchick1.png",
-        "./assets/start/bigchick/bigchick2.png",
-        "./assets/start/bigchick/bigchick3.png",
-        "./assets/start/bigchick/bigchick4.png",
-        "./assets/start/bigchick/bigchick5.png",
-
-    ];
-    const imagePaths6 = [
-        "./assets/pg4/snoopy/snoopy1.png",
-        "./assets/pg4/snoopy/snoopy2.png",
-        "./assets/pg4/snoopy/snoopy3.png",
-       "./assets/pg4/snoopy/snoopy3.png",
-    ];
-    const imagePaths7 = [
-        "./assets/pg5/kuromi/kuromi1.png",
-        "./assets/pg5/kuromi/kuromi2.png",
-        "./assets/pg5/kuromi/kuromi3.png",
-        "./assets/pg5/kuromi/kuromi4.png",
-        "./assets/pg5/kuromi/kuromi5.png",
-        "./assets/pg5/kuromi/kuromi6.png",
-    ];
-    const imagePaths8 = [
-        "./assets/final/froggie/froggie1.png",
-        "./assets/final/froggie/froggie2.png",
-        "./assets/final/froggie/froggie3.png",
-        "./assets/final/froggie/froggie4.png",
-        "./assets/final/froggie/froggie5.png",
-    ];
-    const imagePaths9 = [
-        "./assets/final/pinkie/pinkie1.png",
-        "./assets/final/pinkie/pinkie2.png",
-        "./assets/final/pinkie/pinkie3.png",
-        "./assets/final/pinkie/pinkie4.png",
-        "./assets/final/pinkie/pinkie5.png",
-    ];
-    const imagePaths10 = [
-        "./assets/start/pengu/pengu1.png",
-        "./assets/start/pengu/pengu2.png",
-        "./assets/start/pengu/pengu3.png",
-       
-    ];
+    
     const preloadedImages = [];
-    const preloadedImages2 = [];
-    const preloadedImages3 = [];
-    const preloadedImages4 = [];
-    const preloadedImages5 = [];
-    const preloadedImages6 = [];
-    const preloadedImages7 = [];
-    const preloadedImages8 = [];
-    const preloadedImages9 = [];
-    const preloadedImages10 = [];
+    
 
 
 
@@ -129,26 +107,21 @@ document.addEventListener('DOMContentLoaded', async () => {
             window.electron.send("load-pg3");
         });
     }
-    
     if (next2) {
         next2.addEventListener("click", () => {
             window.electron.send("load-pg2");
         });
     }
-
     if (next3) {
         next3.addEventListener("click", () => {
             window.electron.send("load-pg3");
         });
     }
-
     if (next4) {
         next4.addEventListener("click", () => {
             window.electron.send("load-pg4");
         });
     }
-
-
     if(next6){
         next6.addEventListener("click", () => {
             window.electron.send("load-final");
@@ -164,37 +137,31 @@ document.addEventListener('DOMContentLoaded', async () => {
             window.electron.send("load-index");
         });
     }
-
     if (goBack2) {
         goBack2.addEventListener("click", () => {
             window.electron.send("load-index");
         });
     }
-
     if (goBack3) {
         goBack3.addEventListener("click", () => {
             window.electron.send("load-pg2");
         });
     }
-
     if (goBack4) {
         goBack4.addEventListener("click", () => {
             window.electron.send("load-pg3");
         });
     }
-
     if (goBack5) {
         goBack5.addEventListener("click", () => {
             window.electron.send("load-pg4");
         });
     }
-
     if (minimizeBtn) {
         minimizeBtn.addEventListener('click', () => {
             window.electron.send('minimize-app');
         });
     }
-
     if (closeBtn) {
         closeBtn.addEventListener('click', () => {
             window.electron.send('close-app');
@@ -209,51 +176,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         img.src = src;
         preloadedImages.push(img);
     });
-    imagePaths2.forEach((src) => {
-        const img = new Image();
-        img.src = src;
-        preloadedImages2.push(img);
-    });
-    imagePaths3.forEach((src) => {
-        const img = new Image();
-        img.src = src;
-        preloadedImages3.push(img);
-    });
-    imagePaths4.forEach((src) => {
-        const img = new Image();
-        img.src = src;
-        preloadedImages4.push(img);
-    });
-    imagePaths5.forEach((src) => {
-        const img = new Image();
-        img.src = src;
-        preloadedImages5.push(img);
-    });
-    imagePaths6.forEach((src) => {
-        const img = new Image();
-        img.src = src;
-        preloadedImages6.push(img);
-    });
-    imagePaths7.forEach((src) => {
-        const img = new Image();
-        img.src = src;
-        preloadedImages7.push(img);
-    });
-    imagePaths8.forEach((src) => {
-        const img = new Image();
-        img.src = src;
-        preloadedImages8.push(img);
-    });
-    imagePaths9.forEach((src) => {
-        const img = new Image();
-        img.src = src;
-        preloadedImages9.push(img);
-    });
-    imagePaths10.forEach((src) => {
-        const img = new Image();
-        img.src = src;
-        preloadedImages10.push(img);
-    });
+    
 
 
 
@@ -275,7 +198,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         setTimeout( ()=>{
             next2Button.classList.add("show");
             next2Button.classList.add("pulsing");
-        },3000)
+        },5000)
 
 
     } else {
@@ -427,22 +350,7 @@ document.addEventListener('DOMContentLoaded', async () => {
     
     giftButton.classList.add("pulsing");
 }
-
-
-    
-    // giftButton.addEventListener("click", () => {
-    //     giftButton.classList.remove("pulsing");
-    // });
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
+   
 
 });
 

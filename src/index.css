@@ -33,9 +33,11 @@ body.pg5{
 body.finalpg{
   background-color:#A6A3FF;
 }
+
 .window{
   z-index:10;
 }
+
 .background {
   position: absolute;
   top: 0;
@@ -65,8 +67,6 @@ body.finalpg{
   z-index: 1;
 }
 
-
-
 .chick-small {
   position: absolute;
   top: 120px;
@@ -84,8 +84,6 @@ body.finalpg{
   height: 40%;
   z-index: 2;
 }
-
-
 
 .window-controls {
   position: absolute;
@@ -155,7 +153,7 @@ body.finalpg{
   font-size: 35px;
   font-weight: bold;
   width: 250px;
-  text-align: center; /* Ensures text inside is also centered */
+  text-align: center; 
 }
 
 #from-label1 {
@@ -168,7 +166,7 @@ body.finalpg{
   font-size: 35px;
   font-weight: bold;
   width: 250px;
-  text-align: center; /* Ensures text inside is also centered */
+  text-align: center; 
 }
 
 #from-label2 {
@@ -181,8 +179,9 @@ body.finalpg{
   font-size: 35px;
   font-weight: bold;
   width: 100px;
-  text-align: center; /* Ensures text inside is also centered */
+  text-align: center; 
 }
+
 #opening-gift-label {
   position: absolute;
   display: none;
@@ -194,7 +193,7 @@ body.finalpg{
   width: 250px;
   word-wrap: break-word; 
   white-space: normal;
-  text-align: center; /* Ensures text inside is also centered */
+  text-align: center; 
 }
 
 #opening-gift-label4 {
@@ -208,10 +207,8 @@ body.finalpg{
   width: 250px;
   word-wrap: break-word; 
   white-space: normal;
-  text-align: center; /* Ensures text inside is also centered */
+  text-align: center; 
 }
-
-
 
 #bday-ma-label {
   position: absolute;
@@ -223,7 +220,7 @@ body.finalpg{
   font-size: 35px;
   font-weight: bold;
   width: 300px;
-  text-align: center; /* Ensures text inside is also centered */
+  text-align: center; 
 }
 
 #bday-pa-label {
@@ -249,7 +246,7 @@ body.finalpg{
   font-size: 35px;
   font-weight: bold;
   width: 350px;
-  text-align: center; /* Ensures text inside is also centered */
+  text-align: center; 
 }
 
 #pg4-label2 {
@@ -262,38 +259,20 @@ body.finalpg{
   font-size: 35px;
   font-weight: bold;
   width: 350px;
-  text-align: center; /* Ensures text inside is also centered */
+  text-align: center; 
 }
-
-
-/* #next2 {
-  position: absolute;
-  top:308px;
-  left: 60px;
-  background-color: #f1d3af;
-  border: 2px solid #000000;
-  border-radius:1ch;
-  border-width:1mm;
-  color: black;
-  padding: 5px 25px;
-  cursor: pointer;
-  font-family: 'Pixelify Sans', sans-serif;
-  font-size: 25px;
-  transition: transform 0.2s ease-in-out;
-} */
 
 @keyframes pulse {
   0% {
     transform: translateX(-50%) scale(1);
   }
   50% {
-    transform: translateX(-50%) scale(1.1); /* Slightly bigger */
+    transform: translateX(-50%) scale(1.1); 
   }
   100% {
     transform: translateX(-50%) scale(1);
   }
 }
-
 
 #pg2-gift {
   position: absolute;
@@ -328,20 +307,18 @@ body.finalpg{
   font-family: 'Pixelify Sans', sans-serif;
   font-size: 25px;
   transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
-  opacity: 0;  /* Initially hidden */
+  opacity: 0;  
 }
 
 #pg4-gift.show {
   opacity: 1;
-  transform: translateX(-50%) scale(1.1); /* Slight zoom effect */
-  pointer-events: auto; /* Enable clicks when visible */
+  transform: translateX(-50%) scale(1.1); 
+  pointer-events: auto; 
 }
 
 .pulsing {
   animation: pulse 1.5s infinite ease-in-out;
 }
-
-
 
 #gift-animation {
   width: 150px;  
@@ -363,7 +340,6 @@ body.finalpg{
   100% { content: url("./assets/pg2/opengift/cutie1.png"); opacity: 1;} 
 }
 
-
 #peng-animation {
   position: absolute;
   top: 120px;
@@ -371,11 +347,6 @@ body.finalpg{
   width: 20%;
   height: 20%;
 
-  /* width: 150px;  
-  height: 150px; */
-  
-  /* top: 285px; */
-  /* left: 50%; */
   transform: translateX(-50%);
   animation: pengAnimation 2s steps(5) infinite;
   opacity: 1;
@@ -408,7 +379,6 @@ body.finalpg{
 
 }
 
-
 #kuromi-animation {
   width: 250px;  
   height: 200px;
@@ -434,8 +404,6 @@ body.finalpg{
   100%   { content: url("./assets/pg5/kuromi/kuromi1.png"); opacity: 1;}
 }
 
-
-
 #froggie-animation {
   width: 250px;  
   height: 200px;
@@ -460,8 +428,6 @@ body.finalpg{
   100%  { content: url("./assets/final/froggie/froggie1.png"); opacity: 1;}
 }
 
-
-
 #pinkie-animation {
   width: 150px;  
   opacity:0;
@@ -479,8 +445,8 @@ body.finalpg{
 
 #pinkie-animation.show{
   opacity: 1;
-  transform: translateX(-50%) scale(1.1); /* Slight zoom effect */
-  pointer-events: auto; /* Enable clicks when visible */
+  transform: translateX(-50%) scale(1.1);
+  pointer-events: auto; 
 
 }
 
@@ -494,7 +460,6 @@ body.finalpg{
 
 
 }
-
 
 #popperleft-animation {
   width: 130px;  
@@ -554,7 +519,6 @@ body.finalpg{
 
 }
 
-
 #cake-animation {
   width: 100px;  
   height: 100px;
@@ -573,8 +537,6 @@ body.finalpg{
   100%  { content: url("./assets/pg3/cake/cake1.png"); opacity: 1;}
 
 }
-
-
 
 #balloon1-animation {
   width: 150px;  
@@ -596,7 +558,6 @@ body.finalpg{
 
 }
 
-
 #balloon2-animation {
   width: 150px;  
   height: 200px;
@@ -616,7 +577,6 @@ body.finalpg{
 
 }
 
-
 #gift-opening-animation {
   width: 300px;  
   height: 300px;
@@ -630,8 +590,6 @@ body.finalpg{
 
 }
 
-
-
 @keyframes giftOpeningAnimation {
   0%   { content: url("./assets/pg2/giftbox/gift1.png"); opacity: 1;}
   25%  { content: url("./assets/pg2/giftbox/gift2.png"); opacity: 1;}
@@ -639,8 +597,6 @@ body.finalpg{
   75%  { content: url("./assets/pg2/giftbox/gift4.png"); opacity: 1;}
   100%  { content: url("./assets/pg2/giftbox/gift4.png"); opacity: 1;}
 }
-
-
 
 #snoopy-animation {
   width: 250px;  
@@ -662,8 +618,8 @@ body.finalpg{
 
 @keyframes moveForward {
   0% { left: 1%; opacity: 1; }
-  90% { opacity: 1; } /* Keeps Snoopy visible until near the end */
-  100% { left: 80%; opacity: 0; } /* Fades out at the end */
+  90% { opacity: 1; }
+  100% { left: 80%; opacity: 0; } 
 }
 
 #next-btn {
@@ -682,8 +638,8 @@ body.finalpg{
   font-family: 'Pixelify Sans', sans-serif;
   font-size: 25px;
   transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
-  opacity: 0;  /* Initially hidden */
-  pointer-events: none; /* Prevent clicks when hidden */
+  opacity: 0;  
+  pointer-events: none; 
 }
 
 #next4-btn {
@@ -698,49 +654,38 @@ body.finalpg{
 
   color: black;
   padding: 5px 20px;
-  /* height:px; */
-  /* width:125px; */
   cursor: pointer;
   font-family: 'Pixelify Sans', sans-serif;
   font-size: 25px;
   transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
-  opacity: 0;  /* Initially hidden */
-  pointer-events: none; /* Prevent clicks when hidden */
+  opacity: 0;  
+  pointer-events: none; 
 }
-
 
 #next2 {
   position: absolute;
   top:308px;
   left: 130px;
   background-color: #f1d3af;
-  /* top: 400px;
-  left: 50%; */
   transform: translateX(-50%);
-  /* background-color: #4DA6FFFF; */
   border: 1px solid #000000;
   border-width: 1mm;
   border-radius:1ch;
-
   color: black;
   padding: 5px 25px;
   cursor: pointer;
   font-family: 'Pixelify Sans', sans-serif;
   font-size: 25px;
   transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
-  opacity: 0;  /* Initially hidden */
-  pointer-events: none; /* Prevent clicks when hidden */
+  opacity: 0;  
+  pointer-events: none; 
 }
 
 #next2.show {
   opacity: 1;
-  transform: translateX(-50%) scale(1.1); /* Slight zoom effect */
-  pointer-events: auto; /* Enable clicks when visible */
+  transform: translateX(-50%) scale(1.1); 
+  pointer-events: auto; 
 }
-
-/* #next2:hover {
-  transform: scale(1.1); 
-} */
 
 #next6 {
   position: absolute;
@@ -758,33 +703,27 @@ body.finalpg{
   font-family: 'Pixelify Sans', sans-serif;
   font-size: 25px;
   transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
-  opacity: 0;  /* Initially hidden */
-  pointer-events: none; /* Prevent clicks when hidden */
+  opacity: 0;  
+  pointer-events: none; 
 }
 
 #next-btn.show {
   opacity: 1;
-  transform: translateX(-50%) scale(1.1); /* Slight zoom effect */
-  pointer-events: auto; /* Enable clicks when visible */
+  transform: translateX(-50%) scale(1.1); 
+  pointer-events: auto; 
 }
 
 #next4-btn.show {
   opacity: 1;
-  transform: translateX(-50%) scale(1.1); /* Slight zoom effect */
-  pointer-events: auto; /* Enable clicks when visible */
+  transform: translateX(-50%) scale(1.1); 
+  pointer-events: auto; 
 }
 
 #next6.show {
   opacity: 1;
-  transform: translateX(-50%) scale(1.1); /* Slight zoom effect */
-  pointer-events: auto; /* Enable clicks when visible */
+  transform: translateX(-50%) scale(1.1); 
+  pointer-events: auto; 
 }
-
-/* #next6{
-  position: absolute;
-  top:30px;
-  left:10px;
-} */
 
 #next5 {
   position: absolute;
@@ -801,14 +740,14 @@ body.finalpg{
   font-family: 'Pixelify Sans', sans-serif;
   font-size: 25px;
   transition: opacity 0.5s ease-in-out, transform 0.3s ease-in-out;
-  opacity: 0;  /* Initially hidden */
-  pointer-events: none; /* Prevent clicks when hidden */
+  opacity: 0;  
+  pointer-events: none; 
 }
 
 #next5.show {
   opacity: 1;
-  transform: translateX(-50%) scale(1.1); /* Slight zoom effect */
-  pointer-events: auto; /* Enable clicks when visible */
+  transform: translateX(-50%) scale(1.1); 
+  pointer-events: auto; 
 }
 
 #go-back5{
@@ -862,8 +801,6 @@ body.finalpg{
   transform: scale(1.05); 
 }
 
-
-
 #go-back4{
   position: absolute;
   top:10px;
@@ -899,42 +836,5 @@ body.finalpg{
 }
 
 
-/* #next-btn {
-  position: absolute;
-  top: 550px;
-  left: 50%;
-  transform: translateX(-50%);
-  padding: 10px 20px;
-  font-size: 20px;
-  background-color: #000000;
-  border: 1px solid white;
-  cursor: pointer;
-  display: none; 
-} */
-/* #gift-container {
-  position: absolute;
-  top: 250px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 150px;
-  height: 150px;
-}
 
-.gift-frame {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  transition: opacity 0.8s linear;
-}
-
-.gift-frame:first-child {
-  opacity: 1;
-  z-index: 1;
-}
-
-.gift-frame.active {
-  opacity: 1;
-  z-index: 2;
-} */
 

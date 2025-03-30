@@ -13,12 +13,12 @@ const createWindow = () => {
     width: 500,
     height: 500,
     frame: false,
-    resizable: false, // Prevent resizing
-    fullscreenable: false, // Prevent fullscreen
-    maximizable: false, // Prevent maximizing
-    minimizable: true, // Allow minimizing if needed
+    resizable: false,
+    fullscreenable: false, 
+    maximizable: false, 
+    minimizable: true, 
     webPreferences: {
-      preload: path.join(__dirname, 'preload.js'),
+      preload: path.join(__dirname,  'preload.js'),
       contextIsolation: true,
       enableRemoteModule: false,
       nodeIntegration: true,
@@ -28,7 +28,9 @@ const createWindow = () => {
     },
   });
 
-  mainWindow.loadFile(path.join(__dirname, 'index.html'));
+ 
+  // console.log("Loading file:", path.join(__dirname, "../html_files/index.html"));
+  mainWindow.loadFile(path.join(__dirname, "../html_files/index.html"));
   mainWindow.webContents.openDevTools();
 };
 
@@ -43,34 +45,34 @@ app.whenReady().then(() => {
 });
 
 
-
 ipcMain.on("load-index", () => {
-    mainWindow.loadFile(path.join(__dirname, "index.html"));
+  mainWindow.loadFile(path.join(__dirname, "../html_files/index.html"));
 });
 
 ipcMain.on("load-pg2", () => {
-    mainWindow.loadFile(path.join(__dirname, "pg2.html"));
+  mainWindow.loadFile(path.join(__dirname, "../html_files/pg2.html"));
 });
 
 ipcMain.on("load-pg3", () => {
-    mainWindow.loadFile(path.join(__dirname, "pg3.html"));
+  mainWindow.loadFile(path.join(__dirname, "../html_files/pg3.html"));
 });
 
 ipcMain.on("load-pg4", () => {
-  mainWindow.loadFile(path.join(__dirname, "pg4.html"));
+mainWindow.loadFile(path.join(__dirname, "../html_files/pg4.html"));
 });
 
 ipcMain.on("load-pg5", () => {
-  mainWindow.loadFile(path.join(__dirname, "pg5.html"));
+mainWindow.loadFile(path.join(__dirname, "../html_files/pg5.html"));
 });
 
 ipcMain.on("load-final", () => {
-    mainWindow.loadFile(path.join(__dirname, "final.html"));
+  mainWindow.loadFile(path.join(__dirname, "../html_files/final.html"));
 });
 
 ipcMain.on("load-main-page", () => {
-  mainWindow.loadFile(path.join(__dirname, "index.html"));
+mainWindow.loadFile(path.join(__dirname, "../html_files/index.html"));
 });
+
 
 ipcMain.on('minimize-app', () => {
   mainWindow.minimize();
