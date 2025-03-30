@@ -1,7 +1,6 @@
 ## Birthday Card
 
 - It's a little app I made as a birthday gift to my parents using electron js.It has few animations made with pixel art and frames.
-- 
 - Their birthdays are one day apart and I finished this a couple days later (it's the thought that counts !)
 
 
